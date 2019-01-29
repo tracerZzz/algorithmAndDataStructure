@@ -4,12 +4,22 @@
 
 
 '''
+斐波那契数列
+
+f(0) = 1,f(1) = 1,f(n) = f(n-1) + f(n-2)
+'''
+
+fib = lambda n: 1 if n == 0 or n == 1 else fib(n - 1) + fib(n - 2)
+
+
+
+'''
 台阶问题
 
 一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。
 '''
 
-fib = lambda n: n if n <= 2 else fib(n - 1) + fib(n - 2)
+frog = lambda n: n if n <= 2 else frog(n - 1) + frog(n - 2)
 
 
 
@@ -45,4 +55,5 @@ Fib(n)=2Fib(n-1)
 fib3 = lambda n: n if n == 1 else 2 * fib3(n - 1)
 
 if __name__ == '__main__':
+    print(fib(5))
     pass
