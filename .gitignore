@@ -1,0 +1,8 @@
+*.pyc
+migrations/
+.settings/
+db.sqlite3
+.p*
+**/.idea/**
+!.gitignore
+.DS_Store
