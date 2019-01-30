@@ -9,8 +9,32 @@
 f(0) = 1,f(1) = 1,f(n) = f(n-1) + f(n-2)
 '''
 
-fib = lambda n: 1 if n == 0 or n == 1 else fib(n - 1) + fib(n - 2)
+fib = lambda n: n if n < 2 else fib(n - 1) + fib(n - 2)
 
+
+# 尾递归
+def Fib_tail_recursion(num, res, temp):
+    '''
+    使用尾递归法求解斐波那契数量的第num个数字
+    '''
+    if num == 0:
+        return res
+    else:
+        return Fib_tail_recursion(num - 1, temp, res + temp)
+
+
+# 循环实现
+def Fib_circle(num):
+    '''
+    直接使用循环来求解
+    '''
+    a=0
+    b=1
+    for i in range(1,num):
+        c=a+b
+        a=b
+        b=c
+    return c
 
 
 '''
@@ -20,8 +44,6 @@ fib = lambda n: 1 if n == 0 or n == 1 else fib(n - 1) + fib(n - 2)
 '''
 
 frog = lambda n: n if n <= 2 else frog(n - 1) + frog(n - 2)
-
-
 
 '''
 矩形覆盖问题
@@ -33,9 +55,6 @@ fib2(n - 1) + fib2(n - 2)可以理解为第一步跳一个台阶的所有可能�
 '''
 
 fib2 = lambda n: n if n == 1 else fib2(n - 1) + fib2(n - 2)
-
-
-
 
 '''
 台阶问题拓展
@@ -55,5 +74,7 @@ Fib(n)=2Fib(n-1)
 fib3 = lambda n: n if n == 1 else 2 * fib3(n - 1)
 
 if __name__ == '__main__':
-    print(fib(5))
+    print(Fib_tail_recursion(6, 0, 1))
+    print(Fib_circle(6))
+    print(fib(6))
     pass
