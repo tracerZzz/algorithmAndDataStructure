@@ -13,18 +13,18 @@ fib = lambda n: n if n < 2 else fib(n - 1) + fib(n - 2)
 
 
 # 尾递归
-def Fib_tail_recursion(num, res, temp):
+def fib_tail_recursion(num, res, temp):
     '''
     使用尾递归法求解斐波那契数量的第num个数字
     '''
     if num == 0:
         return res
     else:
-        return Fib_tail_recursion(num - 1, temp, res + temp)
+        return fib_tail_recursion(num - 1, temp, res + temp)
 
 
 # 循环实现
-def Fib_circle(num):
+def fib_circle(num):
     '''
     直接使用循环来求解
     '''
@@ -74,7 +74,7 @@ Fib(n)=2Fib(n-1)
 fib3 = lambda n: n if n == 1 else 2 * fib3(n - 1)
 
 if __name__ == '__main__':
-    print(Fib_tail_recursion(6, 0, 1))
-    print(Fib_circle(6))
+    print(fib_tail_recursion(6, 0, 1))
+    print(fib_circle(6))
     print(fib(6))
     pass

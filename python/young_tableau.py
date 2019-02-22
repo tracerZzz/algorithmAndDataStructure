@@ -11,7 +11,7 @@
 '''
 
 
-def getValue(l, value):
+def get_value(l, value):
     m = len(l) - 1
     n = len(l[0]) - 1
     r = 0
@@ -29,6 +29,6 @@ def getValue(l, value):
 
 if __name__ == '__main__':
     l = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    print(getValue(l, 10))
-    print(getValue(l, 7))
+    print(get_value(l, 10))
+    print(get_value(l, 7))
     pass
