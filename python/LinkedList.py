@@ -15,6 +15,8 @@ class ListNode:
 
 
 def swapDouble(listNode):
+    if listNode.next is None:
+        return listNode
     if listNode is not None and listNode.next is not None:
         next = listNode.next
         listNode.next = swapDouble(next.next)
@@ -23,7 +25,7 @@ def swapDouble(listNode):
 
 
 if __name__ == '__main__':
-    l = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, ListNode(6))))))
+    l = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, ListNode(6,ListNode(7)))))))
     result = swapDouble(l)
     while result is not None:
         print(result.head)
