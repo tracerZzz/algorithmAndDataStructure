@@ -13,6 +13,8 @@
 '''
 递归实现
 '''
+
+
 def quick_sort(list):
     if len(list) < 2:
         return list
@@ -25,5 +27,5 @@ def quick_sort(list):
 
 if __name__ == '__main__':
     print(quick_sort([2]))
-    print(quick_sort([332,32,34,55,56,1,4]))
+    print(quick_sort([332, 32, 34, 55, 56, 1, 4]))
     pass
