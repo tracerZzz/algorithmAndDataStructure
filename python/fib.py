@@ -28,12 +28,12 @@ def fib_circle(num):
     '''
     直接使用循环来求解
     '''
-    a=0
-    b=1
-    for i in range(1,num):
-        c=a+b
-        a=b
-        b=c
+    a = 0
+    b = 1
+    for i in range(1, num):
+        c = a + b
+        a = b
+        b = c
     return c
 
 
