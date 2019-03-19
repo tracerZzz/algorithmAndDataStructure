@@ -4,7 +4,7 @@
 
 '''
 单例模式
-1.__new__
+1.__new_
 2.共享属性
 3.装饰器
 4.模块引入
@@ -91,13 +91,14 @@ class DecoratorClass():
 @DecoratorClass
 class D:
     age = 1
+    def __init__(self,age):
+        self.age=age
 
 
 # 函数装饰器
 # 同时这也是一个闭包
 def FuncDecorator(cls):
     _instances = {}
-
     def get_instance(*args, **kwargs):
         if cls not in _instances:
             obj = cls(*args, **kwargs)
@@ -107,7 +108,8 @@ def FuncDecorator(cls):
     return get_instance
 
 
-# 装饰器作用在类上和作用在__new__上，效果是一样的
+# 装饰器作用在类上和作用在__new__上，效果是一样的，但当在类上使用装饰器同时定义__new__方法时，在调用super时，会因为装饰器改变了类型而报错
+# 所以尽量不让__new__ 和装饰器通时出现
 @FuncDecorator
 class E:
     age = 1
@@ -118,11 +120,11 @@ class E:
 
 
 if __name__ == '__main__':
-    a = E()
-    b = E()
+    a = D(2)
+    b = D(3)
     print(id(a) == id(b))
     print(a.age)
-    a.age += 1
+    a.age += 2
     print(b.age)
 
     pass
