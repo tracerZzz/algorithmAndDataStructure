@@ -115,8 +115,8 @@ class E:
     age = 1
 
     # @FuncDecorator
-    def __new__(cls, *args, **kwargs):
-        return super(E, cls).__new__(cls, *args, **kwargs)
+    # def __new__(cls, *args, **kwargs):
+    #     return super(E, cls).__new__(cls, *args, **kwargs)
 
 
 if __name__ == '__main__':
